@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Monkey Island 1991 refined";
+  src:
+    /* url(assets/fonts/monkey-island-1991-refined.woff2) format("woff2"),
+    url(assets/fonts/monkey-island-1991-refined.woff) format("woff"), */
+    url(assets/fonts/monkey-island-1991-refined.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Monkey Island 1991";
+  src:
+    /* url(assets/fonts/monkey-island-1991-refined.woff2) format("woff2"),
+    url(assets/fonts/monkey-island-1991-refined.woff) format("woff"), */
+    url(assets/fonts/monkey-island-1991.ttf) format("truetype");
+}
+
+body {
+  background: #222;
+  margin: 0;
+  height: 100vh;
+}

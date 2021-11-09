@@ -1,0 +1,76 @@
+{ "frames": {
+   "0": {
+    "frame": { "x": 70, "y": 1, "w": 25, "h": 49 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 10, "y": 0, "w": 23, "h": 47 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   },
+   "1": {
+    "frame": { "x": 1, "y": 50, "w": 23, "h": 49 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 10, "y": 0, "w": 21, "h": 47 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   },
+   "2": {
+    "frame": { "x": 25, "y": 50, "w": 21, "h": 49 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 11, "y": 0, "w": 19, "h": 47 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   },
+   "3": {
+    "frame": { "x": 1, "y": 1, "w": 34, "h": 48 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 7, "y": 1, "w": 32, "h": 46 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   },
+   "4": {
+    "frame": { "x": 69, "y": 51, "w": 20, "h": 49 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 13, "y": 0, "w": 18, "h": 47 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   },
+   "5": {
+    "frame": { "x": 47, "y": 50, "w": 21, "h": 49 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 12, "y": 0, "w": 19, "h": 47 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   },
+   "6": {
+    "frame": { "x": 36, "y": 1, "w": 33, "h": 48 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 8, "y": 1, "w": 31, "h": 46 },
+    "sourceSize": { "w": 45, "h": 47 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.29-x64",
+  "image": "guybrush.png",
+  "format": "RGBA8888",
+  "size": { "w": 95, "h": 100 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "walk", "from": 1, "to": 6, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
