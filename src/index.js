@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { ScummBarScene } from "./scenes/ScummBarScene.js";
+import { ScummMenu } from "./scenes/ScummMenu.js";
 
 const config = {
   type: Phaser.AUTO,
@@ -8,7 +9,7 @@ const config = {
   autoCenter: Phaser.Scale.Center.CENTER_BOTH,
   backgroundColor: "#000000",
   pixelArt: true,
-  scene: [ScummBarScene]
+  scene: [ScummMenu, ScummBarScene]
 };
 
 // eslint-disable-next-line

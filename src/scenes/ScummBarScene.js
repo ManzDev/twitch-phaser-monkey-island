@@ -1,14 +1,19 @@
 import Phaser from "phaser";
-import { talkStyle, menuActionsStyle } from "../modules/fonts.js";
+import { talkStyle } from "../modules/fonts.js";
 
 export class ScummBarScene extends Phaser.Scene {
   constructor() {
-    super("ScummBarScene");
+    super({ key: "ScummBarScene", active: true });
   }
 
   preload() {
     // Background
     this.load.image("scummBar", "assets/backgrounds/scummbar.png");
+
+    // Images
+    this.load.image("cloth", "assets/images/cloth.png");
+    this.load.image("table1", "assets/images/table1.png");
+    this.load.image("table2", "assets/images/table2.png");
 
     // Sprite
     this.load.aseprite({
@@ -20,10 +25,15 @@ export class ScummBarScene extends Phaser.Scene {
 
   create() {
     this.input.setDefaultCursor("crosshair");
+
     // Background
     const scummBar = this.add.image(0, 0, "scummBar")
       .setOrigin(0, 0)
       .setScale(3);
+
+    this.add.image(153, 392, "table1").setScale(3).setDepth(100);
+    this.add.image(597, 387, "table2").setScale(3).setDepth(100);
+    this.add.image(946, 312, "cloth").setScale(3).setDepth(100);
 
     // Camera
     this.cameras.main.setBounds(0, 0, scummBar.displayWidth, scummBar.displayHeight);
@@ -39,41 +49,17 @@ export class ScummBarScene extends Phaser.Scene {
 
     // Input
     this.cursors = this.input.keyboard.createCursorKeys();
-    this.cameras.main.startFollow(this.guybrush, true);
+    this.cameras.main.startFollow(this.guybrush, false);
 
     // Character talk
-    this.add.text(60, 130, "Hola, soy Guybrush Threepwood \ny quiero ser pirata", talkStyle);
-
-    const menuActions = [
-      { x: 15, y: 460, text: "Open" },
-      { x: 15, y: 460, text: "Open" },
-      { x: 15, y: 490, text: "Close" },
-      { x: 15, y: 520, text: "Push" },
-      { x: 15, y: 550, text: "Pull" },
-      { x: 150, y: 460, text: "Walk to" },
-      { x: 150, y: 490, text: "Pick up" },
-      { x: 150, y: 520, text: "Talk to" },
-      { x: 150, y: 550, text: "Give" },
-      { x: 335, y: 460, text: "Use" },
-      { x: 335, y: 490, text: "Look at" },
-      { x: 335, y: 520, text: "Turn on" },
-      { x: 335, y: 550, text: "Turn off" }
-    ];
-
-    // Menu Action
-    const menuItems = menuActions.map(action => {
-      const text = this.add.text(action.x, action.y, action.text, menuActionsStyle).setInteractive();
-      text.on("pointerover", () => text.setColor("#F8FC50"));
-      text.on("pointerout", () => text.setColor("#00A800"));
-      return text;
-    });
+    this.message = this.add.text(60, 130, "Hola, soy Guybrush Threepwood \ny quiero ser pirata", talkStyle).setVisible(false);
   }
 
   update() {
-    if (this.cursors.left.isDown && this.guybrush.x > 30) {
+    if (this.cursors.left.isDown && this.guybrush.x > 190) {
       this.guybrush.x -= 2;
       this.guybrush.play("walk", true).setFlipX(true);
-    } else if (this.cursors.right.isDown) {
+    } else if (this.cursors.right.isDown && this.guybrush.x < 910) {
       this.guybrush.x += 2;
       this.guybrush.play("walk", true).setFlipX(false);
     } else {
